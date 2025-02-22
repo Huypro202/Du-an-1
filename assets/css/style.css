@@ -1,21 +1,24 @@
+/* ==== cài đặt kích thước khớp với thiết kế ==== */
 * {
   box-sizing: border-box;
 }
 
+/*==== quy đổi 1rem = 10px, câu lệnh sau sẽ áp dụng cho rem ở những dòng code dưới====  */
 html {
   font-size: 62.5%;
 }
 
 /* khôi phục lại cỡ chữ mặc định theo rem */
 body {
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* 1.6rem được quy đổi thành 16px nhờ câu lệnh trên */
   font-family: "Poppins", sans-serif;
 }
 /* ======common====== */
 a {
-  text-decoration: none;
+  text-decoration: none; /* bỏ gạch chân ở thẻ a */
 }
 
+/* ==== cài đặt chung cho các nút ấn ==== */
 .btn {
   display: inline-block;
   padding: 0px 16px;
@@ -37,11 +40,11 @@ a {
 }
 /* ======header====== */
 .header {
-  background: #90aec2;
+  background: #e8e7de;
 }
 
 .header.fixed {
-  position: sticky;
+  position: sticky; /* Tạo hiệu ứng bám dính khi lăn chuột ở header vẫn còn nguyên mục menumenu*/
   top: -28px;
 }
 .header .body {
@@ -59,7 +62,7 @@ a {
 }
 
 .nav a {
-  position: relative;
+  position: relative; /* định vị với vị trí ban đầu 1 khoảng x */
   color: #5f5b53;
   font-size: 1.6rem;
   padding: 8px 21px;
@@ -72,8 +75,9 @@ a {
   text-shadow: 1px 0 0 currentColor;
 }
 
+/* Thêm thanh ngang vào dưới chứ H của Home */
 .nav li.active a::after {
-  position: absolute;
+  position: absolute; /* đưa phần tử ra khỏi luồn ban đầu */
   left: 21px;
   bottom: 6px;
   display: block;
@@ -89,5 +93,5 @@ a {
 }
 
 .header .action {
-    margin-left: 49px;
+  margin-left: 49px;
 }
