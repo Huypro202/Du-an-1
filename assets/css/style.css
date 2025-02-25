@@ -57,6 +57,25 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Hiện thị dấu ... khi nội dung quá dàidài */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Số 1 và 2 kia thể hiện số dòng không được phép vượt quá */
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+
+/* Sử dụng để tránh TH chữ liền nhau quá dài hoặc 1 đường link dài làm phá vỡ giao diện */
+.break-all {
+  word-break: break-all;
+}
+
 /* ======header====== */
 .header {
   background: #fffcf4;
@@ -332,6 +351,7 @@ a {
 }
 
 .popular .course-item {
+  flex: 1;
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
@@ -400,5 +420,129 @@ a {
 }
 
 .popular .course-item .btn-book:hover {
+  background: var(--primary-color);
+}
+
+/* ======feedback====== */
+.feedback {
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #2e2100;
+}
+
+.feedback-list {
+  display: flex;
+  overflow: hidden; /* ẩn phần thừa */
+}
+
+.feedback-item {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0; /* Quy định độ co của phần tử */
+}
+
+.feedback-item .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedback-item .info .member-name {
+  font-family: var(--font-heading);
+  margin-top: 18px;
+  color: #f7f7f7;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42; /* 141.667% */
+}
+
+.feedback-item .info .desc {
+  margin-top: 4px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+}
+
+.feedback-item .dots {
+  display: flex;
+  margin-top: 28px;
+  gap: 6px;
+}
+
+.feedback-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #634700;
+  cursor: pointer;
+}
+
+.feedback-item .dot.active {
+  background-color: var(--primary-color);
+  cursor: default;
+}
+
+.feedback-item .content {
+  width: 66%;
+  margin-left: auto;
+}
+
+.feedback-item blockquote {
+  color: #fff;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.54; /* 153.846% */
+}
+
+/* ====== Phần features ====== */
+.features {
+  margin-top: 135px;
+  background: #fff;
+  padding: 65px 0px;
+}
+
+.features .body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features .body .images {
+  gap: 30px;
+  display: flex;
+}
+
+.features .body .images img {
+  width: 270px;
+  height: 404px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.features .images .lower {
+  margin-top: 34px;
+}
+
+.features .content {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  line-height: 1.75; /* 175% */
+}
+
+.features .content .cta-btn {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+}
+
+.features .content .cta-btn:hover {
   background: var(--primary-color);
 }
